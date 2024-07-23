@@ -1,0 +1,25 @@
+{
+  "name": "hono-docs",
+  "author": {
+    "name": "@goisaki - Kengo Watanabe"
+  },
+  "dependencies": {
+    "hono": "^4.5.1",
+    "honox": "^0.1.23"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240529.0",
+    "@hono/vite-cloudflare-pages": "^0.4.2",
+    "@hono/vite-dev-server": "^0.13.1",
+    "vite": "^5.2.12",
+    "wrangler": "^3.57.2"
+  },
+  "private": true,
+  "scripts": {
+    "build": "vite build --mode client && vite build",
+    "deploy": "bun run build && wrangler pages deploy",
+    "dev": "vite",
+    "preview": "wrangler pages dev"
+  },
+  "type": "module"
+}
