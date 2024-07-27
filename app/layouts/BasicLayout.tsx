@@ -1,5 +1,5 @@
 import type { Child } from 'hono/jsx'
-import { Script } from 'honox/server'
+import { Link, Script } from 'honox/server'
 
 export type SiteConfig = {
   title: string
@@ -21,6 +21,7 @@ export function BasicLayout({
         <title>{pageTitle ? `${pageTitle} - ${title}` : title}</title>
         <link rel='icon' href='/favicon.ico' />
         <Script src='/app/client.ts' async />
+        <Link href='/app/styles/tailwind.css' rel='stylesheet' />
       </head>
       <body>{children}</body>
     </html>
