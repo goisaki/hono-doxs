@@ -1,17 +1,26 @@
 import { PartialSiteConfig } from '~/global'
 import { BasicLayout, BasicProps } from './BasicLayout'
+import { defu } from 'defu'
 
-export type DocProps = BasicProps & {
-  config: PartialSiteConfig & {
-    sidebar: string
-  }
+type DocConfig = {
+  sidebar: string
 }
-export function DocLayout({ children, ...props }: DocProps) {
-  const { sidebar } = props.config
+type PartialDocConfig = {
+  sidebar?: string
+}
+type DocProps = BasicProps & {
+  docConfig?: PartialDocConfig
+}
+
+const defaultDocConfig: DocConfig = {
+  sidebar: 'default',
+}
+
+export function DocLayout({ children, docConfig, ...props }: DocProps) {
+  const { sidebar } = defu(defaultDocConfig, docConfig) as DocConfig
   return (
     <BasicLayout {...props}>
-      sidebar:{sidebar}
-      <div class='markdown-root'>{children}</div>
+      <div class='markdown antialiased'>{children}</div>
     </BasicLayout>
   )
 }

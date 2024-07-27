@@ -6,7 +6,12 @@ export default jsxRenderer(({ children, title }) => {
     <DocLayout
       config={{
         title: 'HonoX Docs',
-        sidebar: 'Hoge',
+        links: [
+          {
+            href: '/app/styles/markdown.css',
+            rel: 'stylesheet',
+          },
+        ]
       }}
     >
       {children}
