@@ -1,4 +1,4 @@
-### Trailing Slash
+# Trailing Slash
 
 By default, trailing slashes are removed if the root file is an index file such as `index.tsx` or `index.mdx`.
 However, if you set the `trailingSlash` option to `true` as the following, the trailing slash is not removed.

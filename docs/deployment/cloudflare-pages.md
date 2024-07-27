@@ -1,4 +1,4 @@
-### Cloudflare Pages
+# Cloudflare Pages
 
 Add the `wrangler.toml`:
 

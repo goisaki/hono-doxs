@@ -1,4 +1,4 @@
-## Get Started - with Client
+# Get Started - with Client
 
 Let's create an application that includes a client side. Here, we will use hono/jsx/dom.
 

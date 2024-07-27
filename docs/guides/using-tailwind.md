@@ -1,4 +1,4 @@
-### Using Tailwind CSS
+# Using Tailwind CSS
 
 Given that HonoX is Vite-centric, if you wish to utilize [Tailwind CSS](https://tailwindcss.com/), simply adhere to the official instructions.
 

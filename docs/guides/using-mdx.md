@@ -1,4 +1,4 @@
-### MDX
+# MDX
 
 MDX can also be used. Here is the `vite.config.ts`.
 

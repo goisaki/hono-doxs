@@ -1,4 +1,4 @@
-## BYOR - Bring Your Own Renderer
+# BYOR - Bring Your Own Renderer
 
 You can bring your own renderer using a UI library like React, Preact, Solid, or others.
 

@@ -1,4 +1,4 @@
-### Cloudflare Bindings
+# Cloudflare Bindings
 
 If you want to use Cloudflare's Bindings in your development environment, create `wrangler.toml` and configure it properly.
 

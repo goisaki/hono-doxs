@@ -1,4 +1,4 @@
-### SSG - Static Site Generation
+# SSG - Static Site Generation
 
 Using Hono's SSG feature, you can generate static HTML for each route.
 

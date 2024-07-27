@@ -1,4 +1,4 @@
-## Get Started - Basic
+# Get Started - Basic
 
 Let's create a basic HonoX application using hono/jsx as a renderer. This application has no client JavaScript and renders JSX on the server side.
 

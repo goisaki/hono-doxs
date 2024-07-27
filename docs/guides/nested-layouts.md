@@ -1,4 +1,4 @@
-### Nested Layouts
+# Nested Layouts
 
 If you are using the JSX Renderer middleware, you can nest layouts using ` <Layout />`.
 

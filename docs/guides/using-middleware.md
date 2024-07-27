@@ -1,4 +1,4 @@
-### Using Middleware
+# Using Middleware
 
 You can use Hono's Middleware in each root file with the same syntax as Hono. For example, to validate a value with the [Zod Validator](https://github.com/honojs/middleware/tree/main/packages/zod-validator), do the following:
 
