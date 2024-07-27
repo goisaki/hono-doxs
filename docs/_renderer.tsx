@@ -1,14 +1,15 @@
 import { jsxRenderer } from 'hono/jsx-renderer'
-import { BasicLayout } from '~/layouts/BasicLayout'
+import { DocLayout } from '~/layouts/DocLayout'
 
 export default jsxRenderer(({ children, title }) => {
   return (
-    <BasicLayout
+    <DocLayout
       config={{
-        pageTitle: title,
+        title: 'HonoX Docs',
+        sidebar: 'Hoge',
       }}
     >
       {children}
-    </BasicLayout>
+    </DocLayout>
   )
 })

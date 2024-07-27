@@ -1,18 +1,16 @@
 import type { Child } from 'hono/jsx'
 import { Link, Script } from 'honox/server'
+import { PartialSiteConfig, SiteConfig } from '~/global'
+import { defu } from 'defu'
+import { siteConfig } from 'siteConfig'
 
-export type SiteConfig = {
-  title: string
-  pageTitle?: string,
+export type BasicProps = {
+  config: PartialSiteConfig
+  children: Child
 }
 
-export function BasicLayout({
-  config: { title, pageTitle },
-  children,
-}: {
-  config: SiteConfig
-  children: Child
-}) {
+export function BasicLayout({ config, children }: BasicProps) {
+  const { title, pageTitle, links, scripts } = defu(config, siteConfig) as SiteConfig
   return (
     <html lang='en'>
       <head>
@@ -20,8 +18,12 @@ export function BasicLayout({
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <title>{pageTitle ? `${pageTitle} - ${title}` : title}</title>
         <link rel='icon' href='/favicon.ico' />
-        <Script src='/app/client.ts' async />
-        <Link href='/app/styles/tailwind.css' rel='stylesheet' />
+        {links.map((linkOptions) => (
+          <Link {...linkOptions} />
+        ))}
+        {scripts.map((scriptOptions) => (
+          <Script {...scriptOptions} />
+        ))}
       </head>
       <body>{children}</body>
     </html>
