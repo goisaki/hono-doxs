@@ -1,5 +1,5 @@
 import { jsxRenderer } from 'hono/jsx-renderer'
-import { BasicLayout } from '../layouts/BasicLayout'
+import { BasicLayout } from '~/layouts/BasicLayout'
 import { siteConfig } from '../../siteConfig'
 
 export default jsxRenderer(({ children, title }) => {
