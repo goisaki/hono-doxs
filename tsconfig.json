@@ -14,13 +14,7 @@
       "@cloudflare/workers-types"
     ],
     "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx",
-    "baseUrl": ".",
-    "paths": {
-      "~/*": [
-        "app/*"
-      ],
-    }
+    "jsxImportSource": "hono/jsx"
   },
   "include": [
     "**/*.ts",

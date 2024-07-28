@@ -1,19 +1,5 @@
-import { } from 'hono'
-import { Link, Script } from 'honox/server'
+import {} from 'hono'
 
-type ComponentProps<Component> = Parameters<Component>[0]
-export type SiteConfig = {
-  title: string
-  pageTitle?: string
-  links: ComponentProps<typeof Link>[]
-  scripts: ComponentProps<typeof Script>[]
-}
-export type PartialSiteConfig = {
-  title?: string
-  pageTitle?: string
-  links?: ComponentProps<typeof Link>[]
-  scripts?: ComponentProps<typeof Script>[]
-}
 type Head = {
   title?: string
 }
