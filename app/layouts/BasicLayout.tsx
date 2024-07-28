@@ -1,32 +1,22 @@
-import type { Child } from 'hono/jsx'
+import { Child } from 'hono/jsx'
 import { Link, Script } from 'honox/server'
-import { PartialSiteConfig, SiteConfig } from '~/global'
-import { defu } from 'defu'
-import { siteConfig } from 'siteConfig'
-import calSansURL1 from '/webfonts/CalSans-SemiBold.woff2?url'
-import calSansURL2 from '/webfonts/CalSans-SemiBold.woff?url'
-import calSansURL3 from '/webfonts/CalSans-SemiBold.ttf?url'
 
-export type BasicProps = {
-  config: PartialSiteConfig
+type BasicProps = {
+  title: string
+  pageTitle?: string
   children: Child
 }
 
-export function BasicLayout({ config, children }: BasicProps) {
-  const { title, pageTitle, links, scripts } = defu(config, siteConfig) as SiteConfig
+export function BasicLayout({ pageTitle, children }: BasicProps) {
   return (
     <html lang='en'>
       <head>
         <meta charset='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <title>{pageTitle ? `${pageTitle} - ${title}` : title}</title>
+        <title>{pageTitle ? `${pageTitle} - HonoX` : 'HonoX'}</title>
         <link rel='icon' href='/favicon.ico' />
-        {links.map((linkOptions) => (
-          <Link {...linkOptions} />
-        ))}
-        {scripts.map((scriptOptions) => (
-          <Script {...scriptOptions} />
-        ))}
+        <Script src='/app/client.ts' async />
+        <Link href='/app/styles/tailwind.css' rel='stylesheet' />
       </head>
       <body>{children}</body>
     </html>

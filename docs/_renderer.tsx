@@ -3,11 +3,7 @@ import { DocLayout } from '~/layouts/DocLayout'
 
 export default jsxRenderer(({ children, title }) => {
   return (
-    <DocLayout
-      config={{
-        title: 'HonoX Docs'
-      }}
-    >
+    <DocLayout title='HonoX Docs' pageTitle={title}>
       {children}
     </DocLayout>
   )
