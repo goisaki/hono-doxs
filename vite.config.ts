@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
 	if (mode === 'client') {
 		config.build = {
 			rollupOptions: {
-				input: ['/app/styles/tailwind.css'],
+				input: ['/app/styles/tailwind.css', '/app/styles/markdown.css'],
 				output: {
 					assetFileNames: 'static/assets/[name].[ext]',
 				},
