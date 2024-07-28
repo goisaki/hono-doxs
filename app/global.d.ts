@@ -1,8 +1,5 @@
 import {} from 'hono'
-
-type Head = {
-	title?: string
-}
+import type { Meta } from './types'
 
 declare module 'hono' {
 	interface Env {
@@ -15,7 +12,9 @@ declare module 'hono' {
 		// biome-ignore lint/style/useShorthandFunctionType:
 		(
 			content: string | Promise<string>,
-			head?: Head,
+			meta?: Meta & {
+				frontmatter?: Meta
+			},
 		): Response | Promise<Response>
 	}
 }
