@@ -5,9 +5,9 @@ import honox from 'honox/vite'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
-import { defineConfig } from 'vite'
+import { type UserConfig, defineConfig } from 'vite'
 
-export default defineConfig({
+const config: UserConfig = {
 	plugins: [
 		honox({ devServer: { adapter } }),
 		mdx({
@@ -16,4 +16,18 @@ export default defineConfig({
 		}),
 		pages(),
 	],
+}
+export default defineConfig(({ mode }) => {
+	if (mode === 'client') {
+		config.build = {
+			rollupOptions: {
+				input: ['/app/styles/tailwind.css'],
+				output: {
+					assetFileNames: 'static/assets/[name].[ext]',
+				},
+			},
+		}
+		return config
+	}
+	return config
 })

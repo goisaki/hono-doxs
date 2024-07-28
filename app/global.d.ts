@@ -1,5 +1,5 @@
 import {} from 'hono'
-import type { Meta } from './types'
+import type { ContextRendererProps, Meta } from './types'
 
 declare module 'hono' {
 	interface Env {
@@ -10,11 +10,6 @@ declare module 'hono' {
 	}
 	interface ContextRenderer {
 		// biome-ignore lint/style/useShorthandFunctionType:
-		(
-			content: string | Promise<string>,
-			meta?: Meta & {
-				frontmatter?: Meta
-			},
-		): Response | Promise<Response>
+		(...props: ContextRendererProps): Response | Promise<Response>
 	}
 }
