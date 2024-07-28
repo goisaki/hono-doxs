@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240725.0",
+    "@fontsource-variable/inter": "^5.0.19",
     "@hono/vite-cloudflare-pages": "^0.4.2",
     "@hono/vite-dev-server": "^0.13.1",
     "@mdx-js/rollup": "^3.0.1",

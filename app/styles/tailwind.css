@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Cal Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('https://unpkg.com/cal-sans@1.0.1/fonts/webfonts/CalSans-SemiBold.woff2') format('woff2'),
+    url('https://unpkg.com/cal-sans@1.0.1/fonts/webfonts/CalSans-SemiBold.woff') format('woff'),
+    url('https://unpkg.com/cal-sans@1.0.1/fonts/webfonts/CalSans-SemiBold.ttf') format('truetype');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

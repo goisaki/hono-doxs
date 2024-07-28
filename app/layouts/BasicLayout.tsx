@@ -3,6 +3,9 @@ import { Link, Script } from 'honox/server'
 import { PartialSiteConfig, SiteConfig } from '~/global'
 import { defu } from 'defu'
 import { siteConfig } from 'siteConfig'
+import calSansURL1 from '/webfonts/CalSans-SemiBold.woff2?url'
+import calSansURL2 from '/webfonts/CalSans-SemiBold.woff?url'
+import calSansURL3 from '/webfonts/CalSans-SemiBold.ttf?url'
 
 export type BasicProps = {
   config: PartialSiteConfig
